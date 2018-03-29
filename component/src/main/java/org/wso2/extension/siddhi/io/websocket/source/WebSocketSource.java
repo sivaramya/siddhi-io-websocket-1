@@ -108,6 +108,7 @@ public class WebSocketSource extends Source {
     private SourceEventListener sourceEventListener;
     private WebSocketClientConnectorListener connectorListener;
 
+
     @Override
     public void init(SourceEventListener sourceEventListener, OptionHolder optionHolder, String[] strings,
                      ConfigReader configReader, SiddhiAppContext siddhiAppContext) {
@@ -119,6 +120,11 @@ public class WebSocketSource extends Source {
         this.idleTimeoutString = optionHolder.validateAndGetStaticValue
                 (WebSocketProperties.IDLE_TIMEOUT, null);
         this.sourceEventListener = sourceEventListener;
+
+        this.idleTimeoutString = optionHolder.validateAndGetStaticValue
+                (WebSocketProperties.IDLE_TIMEOUT, null);
+        this.sourceEventListener = sourceEventListener;
+
         if (idleTimeoutString != null) {
             try {
                 idleTimeout = Integer.parseInt(idleTimeoutString);
