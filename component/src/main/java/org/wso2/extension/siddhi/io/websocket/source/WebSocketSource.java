@@ -124,9 +124,7 @@ public class WebSocketSource extends Source {
         this.idleTimeoutString = optionHolder.validateAndGetStaticValue
                 (WebSocketProperties.IDLE_TIMEOUT, null);
         this.sourceEventListener = sourceEventListener;
-        this.idleTimeoutString = optionHolder.validateAndGetStaticValue
-                (WebSocketProperties.IDLE_TIMEOUT, null);
-        this.sourceEventListener = sourceEventListener;
+
         if (idleTimeoutString != null) {
             try {
                 idleTimeout = Integer.parseInt(idleTimeoutString);
