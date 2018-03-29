@@ -128,7 +128,7 @@ public class WebSocketSink extends Sink {
     public String[] getSupportedDynamicOptions() {
         return SUPPORTED_DYNAMIC_OPTIONS;
     }
-
+                
     @Override
     protected void init(StreamDefinition streamDefinition, OptionHolder optionHolder,
                         ConfigReader configReader, SiddhiAppContext siddhiAppContext) {
@@ -139,6 +139,12 @@ public class WebSocketSink extends Sink {
         this.headers = optionHolder.validateAndGetStaticValue
                 (WebSocketProperties.HEADERS, null);
         this.idleTimeoutString = optionHolder.validateAndGetStaticValue
+                (WebSocketProperties.IDLE_TIMEOUT, null);
+
+        this.headers = optionHolder.validateAndGetStaticValue
+                (WebSocketProperties.HEADERS, null);
+        this.idleTimeoutString = optionHolder.validateAndGetStaticValue
+                (WebSocketProperties.IDLE_TIMEOUT, null);
                 (WebSocketProperties.IDLE_TIMEOUT, null);
         if (idleTimeoutString != null) {
             try {
